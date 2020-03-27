@@ -30,5 +30,5 @@ public struct Weather: Decodable {
         case main
         case icon
     }
-    
+
 }

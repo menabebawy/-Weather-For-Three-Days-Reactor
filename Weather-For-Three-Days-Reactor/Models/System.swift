@@ -14,5 +14,5 @@ struct System: Decodable {
     enum CodingKeys: String, CodingKey {
         case timeZone = "timezone"
     }
-    
+
 }

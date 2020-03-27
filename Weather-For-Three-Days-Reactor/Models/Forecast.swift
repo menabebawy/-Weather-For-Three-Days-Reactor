@@ -47,5 +47,5 @@ extension Forecast: ForecastDateAdapter {
     func isNext(daysValue: Int) -> Bool {
         dateAdapter.isNext(daysValue: daysValue)
     }
-    
+
 }

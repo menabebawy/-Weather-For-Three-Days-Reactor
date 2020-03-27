@@ -32,5 +32,5 @@ public struct Main: Decodable {
     private func toString(tem: Float) -> String {
         String(format: "%.0f", tem) + "º"
     }
-    
+
 }

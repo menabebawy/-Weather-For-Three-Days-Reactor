@@ -24,5 +24,5 @@ struct City: Decodable {
         case weather = "weather"
         case main = "main"
     }
-    
+
 }

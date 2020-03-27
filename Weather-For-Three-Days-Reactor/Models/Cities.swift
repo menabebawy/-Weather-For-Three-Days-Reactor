@@ -28,5 +28,5 @@ extension Cities {
          6077243: "Montreal",
          6167865: "Tronto"].map { "\($0.key)" }.joined(separator: ",")
     }
-    
+
 }
