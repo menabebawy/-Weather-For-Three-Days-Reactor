@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		432A54B9A0598BB95482BE9D /* Pods_Weather_For_Three_Days_Reactor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28519D0B81228B2BFFEC1142 /* Pods_Weather_For_Three_Days_Reactor.framework */; };
 		4A3969EFC213DA01BBD713E3 /* Pods_Weather_For_Three_Days_ReactorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D2EB9931D6F2D55A0FC0DA /* Pods_Weather_For_Three_Days_ReactorTests.framework */; };
+		5A8A5336242E490700A05AFA /* CityForecastViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A5335242E490700A05AFA /* CityForecastViewReactor.swift */; };
 		5AA44C6C242CEE27004179E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44C6B242CEE27004179E9 /* AppDelegate.swift */; };
 		5AA44C6E242CEE27004179E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA44C6D242CEE27004179E9 /* SceneDelegate.swift */; };
 		5AA44C75242CEE2A004179E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AA44C74242CEE2A004179E9 /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		28519D0B81228B2BFFEC1142 /* Pods_Weather_For_Three_Days_Reactor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_For_Three_Days_Reactor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D916579DF185293774393A /* Pods-Weather-For-Three-Days-ReactorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather-For-Three-Days-ReactorTests.debug.xcconfig"; path = "Target Support Files/Pods-Weather-For-Three-Days-ReactorTests/Pods-Weather-For-Three-Days-ReactorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		48E016E94B0EAB95809D1C59 /* Pods-Weather-For-Three-Days-Reactor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather-For-Three-Days-Reactor.release.xcconfig"; path = "Target Support Files/Pods-Weather-For-Three-Days-Reactor/Pods-Weather-For-Three-Days-Reactor.release.xcconfig"; sourceTree = "<group>"; };
+		5A8A5335242E490700A05AFA /* CityForecastViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityForecastViewReactor.swift; sourceTree = "<group>"; };
 		5AA44C68242CEE27004179E9 /* Weather-For-Three-Days-Reactor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather-For-Three-Days-Reactor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA44C6B242CEE27004179E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AA44C6D242CEE27004179E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -248,9 +250,10 @@
 		5AA44CAA242CF0B0004179E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5AA44CAB242CF0B0004179E9 /* CurrentCell */,
-				5AA44CAE242CF0B0004179E9 /* CityForecastViewController.xib */,
+				5A8A5335242E490700A05AFA /* CityForecastViewReactor.swift */,
 				5AA44CAF242CF0B0004179E9 /* CityForecastViewController.swift */,
+				5AA44CAE242CF0B0004179E9 /* CityForecastViewController.xib */,
+				5AA44CAB242CF0B0004179E9 /* CurrentCell */,
 				5AA44CB0242CF0B0004179E9 /* NextDayCell */,
 				5AA44CB3242CF0B0004179E9 /* HourlyCell */,
 				5AA44CB8242CF0B0004179E9 /* CityForecastDataSource.swift */,
@@ -514,6 +517,7 @@
 				5AA44CD3242CF0C2004179E9 /* Weather.swift in Sources */,
 				5AA44CA1242CF0A0004179E9 /* CitiesViewController.swift in Sources */,
 				5AA44C94242CF07E004179E9 /* ForecastCoordinator.swift in Sources */,
+				5A8A5336242E490700A05AFA /* CityForecastViewReactor.swift in Sources */,
 				5AA44CA5242CF0A1004179E9 /* CitiesDataSource.swift in Sources */,
 				5AA44C6E242CEE27004179E9 /* SceneDelegate.swift in Sources */,
 				5AA44CE1242CF0E5004179E9 /* Array+Extension.swift in Sources */,

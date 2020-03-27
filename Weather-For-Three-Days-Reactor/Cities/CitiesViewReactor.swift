@@ -9,7 +9,7 @@
 import ReactorKit
 import RxSwift
 
-class CitiesViewReactor: Reactor {
+final class CitiesViewReactor: Reactor {
 
     enum Action {
         case loadCities

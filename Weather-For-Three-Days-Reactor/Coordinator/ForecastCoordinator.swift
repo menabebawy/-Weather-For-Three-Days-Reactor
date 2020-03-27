@@ -20,6 +20,7 @@ final class CityForecasCoordinator: BaseCoordinator {
         let nibName = String(describing: CityForecastViewController.self)
         let forecastViewController = CityForecastViewController(nibName: nibName, bundle: .main)
         forecastViewController.city = city
+        forecastViewController.reactor = CityForecastViewReactor()
         navigationController.pushViewController(forecastViewController, animated: true)
     }
 
