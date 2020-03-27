@@ -9,36 +9,23 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import ReactorKit
 
-final class CitiesViewController: UIViewController {
+final class CitiesViewController: UIViewController, StoryboardView {
     @IBOutlet weak private var tableView: UITableView!
 
-    private var viewModel = CitiesViewModel()
     private let dataSource = CitiesDataSource()
-    private let disposeBag = DisposeBag()
-
     private let selectedCityPublishSubject = PublishSubject<City>()
+
     var selectedCityObservable: Observable<City> {
         return selectedCityPublishSubject.asObserver()
     }
 
+    var disposeBag: DisposeBag = DisposeBag()
+
     override func loadView() {
         super.loadView()
         title = "Weather Reactive App"
-
-        viewModel.errorMessageObservable
-            .subscribe(onNext: { [weak self] message in
-                guard let `self` = self else { return }
-                AlertControllerRx(actions: [AlertAction.action(title: "Ok")])
-                    .showAlert(from: self, title: "Error", message: message)
-                    .subscribe()
-                    .disposed(by: self.disposeBag)
-            })
-            .disposed(by: disposeBag)
-
-        viewModel.citiesObservable
-            .bind(to: tableView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
 
         dataSource.titleForHeaderInSection = { dataSource, index in
             dataSource.sectionModels[index].header
@@ -50,8 +37,6 @@ final class CitiesViewController: UIViewController {
                 self?.selectedCityPublishSubject.onNext(city)
             })
             .disposed(by: disposeBag)
-
-        viewModel.requestCities()
     }
 
     override func viewDidLoad() {
@@ -64,6 +49,28 @@ final class CitiesViewController: UIViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: false)
         }
+    }
+
+    func bind(reactor: CitiesViewReactor) {
+        // Action
+        reactor.action.onNext(.loadCities)
+
+        // State
+        reactor.state
+            .map { $0.errorMessage}
+            .subscribe(onNext: { [weak self] message in
+                guard !message.isEmpty, let `self` = self else { return }
+                AlertControllerRx(actions: [AlertAction.action(title: "Ok")])
+                    .showAlert(from: self, title: "Error", message: message)
+                    .subscribe()
+                    .disposed(by: self.disposeBag)
+            })
+            .disposed(by: disposeBag)
+
+        reactor.state
+            .map { $0.citiesSections }
+            .bind(to: tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
     }
 
 }

@@ -15,6 +15,7 @@ final class CitiesCoordinator: BaseCoordinator {
     override func start() {
         let nibName = String(describing: CitiesViewController.self)
         let citiesViewController = CitiesViewController(nibName: nibName, bundle: .main)
+        citiesViewController.reactor = CitiesViewReactor()
         citiesViewController.selectedCityObservable
             .subscribe(onNext: { [weak self] city in
                 guard let `self` = self else { return }

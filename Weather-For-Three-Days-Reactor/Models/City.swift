@@ -8,14 +8,14 @@
 
 import Foundation
 
-public struct City: Decodable {
-    public let id: Int
-    public let system: System
-    public let date: Double
-    public let name: String
-    public let weather: [Weather]
-    public let main: Main
-
+struct City: Decodable {
+    let id: Int
+    let system: System
+    let date: Double
+    let name: String
+    let weather: [Weather]
+    let main: Main
+    
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case system = "sys"
@@ -24,5 +24,5 @@ public struct City: Decodable {
         case weather = "weather"
         case main = "main"
     }
-
+    
 }

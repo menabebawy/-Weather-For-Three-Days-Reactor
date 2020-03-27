@@ -41,7 +41,7 @@ public struct DateAdapter {
         calendar.component(.weekday, from: epochDate)
     }
 
-    public init(dateAdaptee: DateAdaptee) {
+    init(dateAdaptee: DateAdaptee) {
         self.dateAdaptee = dateAdaptee
     }
 
@@ -71,19 +71,19 @@ public struct DateAdapter {
 // MARK: - Forecast date adapter
 
 extension DateAdapter: ForecastDateAdapter {
-    public var hour: String {
+    var hour: String {
         epochHourComponent >= 12 ? "\(epochHourComponent - 12)pm" :  "\(epochHourComponent)am"
     }
 
-    public var day: String {
+    var day: String {
         epochDayName()
     }
 
-    public var isCurrentDay: Bool {
+    var isCurrentDay: Bool {
         currentDayComponent == epochDayComponent
     }
 
-    public func isNext(daysValue: Int) -> Bool {
+    func isNext(daysValue: Int) -> Bool {
         let nextdate = calendar.date(byAdding: .day, value: daysValue, to: currentDate)!
         let epochDate = Date(timeIntervalSince1970: dateAdaptee.since1970)
 
@@ -95,9 +95,7 @@ extension DateAdapter: ForecastDateAdapter {
         let epochMonth = calendar.component(.month, from: epochDate)
         let epochYear = calendar.component(.year, from: epochDate)
 
-        return  nextDateDay == epochDay &&
-            nextDateMonth == epochMonth &&
-            nextDateYear == epochYear
+        return  nextDateDay == epochDay && nextDateMonth == epochMonth && nextDateYear == epochYear
     }
 
 }

@@ -8,11 +8,11 @@
 
 import Foundation
 
-public struct DateAdaptee {
-    public let since1970: Double
-    public let timeZone: Int
+struct DateAdaptee {
+    let since1970: Double
+    let timeZone: Int
 
-    public init(since1970: Double, timeZone: Int) {
+    init(since1970: Double, timeZone: Int) {
         self.since1970 = since1970
         self.timeZone = timeZone
     }

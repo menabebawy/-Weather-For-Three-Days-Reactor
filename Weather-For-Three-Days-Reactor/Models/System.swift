@@ -8,11 +8,11 @@
 
 import Foundation
 
-public struct System: Decodable {
-    public let timeZone: Int
-
+struct System: Decodable {
+    let timeZone: Int
+    
     enum CodingKeys: String, CodingKey {
         case timeZone = "timezone"
     }
-
+    
 }
