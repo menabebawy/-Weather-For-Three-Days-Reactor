@@ -13,7 +13,6 @@ import ReactorKit
 final class CityForecastViewController: UIViewController, StoryboardView {
     @IBOutlet weak private var tableView: UITableView!
 
-    private let viewModel = CityForecastViewModel()
     private let dataSource = CityForecastDataSource()
 
     var disposeBag = DisposeBag()

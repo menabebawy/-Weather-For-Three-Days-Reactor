@@ -9,9 +9,7 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
-    var citiesCoordinator: CitiesCoordinator!
 
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
@@ -24,8 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let navigationController = window?.rootViewController as? UINavigationController else { return }
 
-        citiesCoordinator = CitiesCoordinator(navigationController: navigationController)
-        citiesCoordinator.start()
+        Startup(navigationController: navigationController).build().forEach { $0.execute() }
 
         window?.makeKeyAndVisible()
     }
